@@ -1,1 +1,2 @@
-# Recording-of-awesome-hand-estimation-and-construction
+# Recording-of-diffusion-model-learning
+
