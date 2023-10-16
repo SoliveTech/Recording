@@ -12,29 +12,27 @@ The biggest impression of diffusion in the early learning process includes two p
 ## 1. Main Article
 
 ### 1-1 Score Base Model   
-<br>  
-【1】NCSN（2019-Yang Song）：Generative Modeling by Estimating Gradients of the Data Distribution<br>  
+<br>
+【1】NCSN（2019-Yang Song）：Generative Modeling by Estimating Gradients of the Data Distribution<br>
 【2*】NCSN-improved（2020-Yang Song）：Improved Techniques for Training Score-Based Generative Models<br>  
 
 ### 1-2 DDPM
-<br>  
-【1】DDPM（2020-6-UCB）：Denoising Diffusion Probabilistic Models<br>  
-【2】SDE-Framework（2020-10-Yang Song）：Score-Based Generative Modeling through Stochastic Differential Equations<br>  
-【3】DDIM（2020-10-Jiaming Song）：Denoising Diffusion Implicit Models<br>  
-【4】IDDPM（2021-2-OpenAI）：Improved Denoising Diffusion Probabilistic Models<br>  
-【5*】Diffusion-Beat-GANs（2021-5-OpenAI）：Diffusion Models Beat GANs on Image Synthesis<br>
-【6】SR3(TPAMI-2022):Image-Super-Resolution-via-Iterative-Refinement<br>
-【7】deblur(cvpr-2022):Deblurring via Stochastic Refinement   
+<br>
+【1】DDPM（2020-6-UCB）：Denoising Diffusion Probabilistic Models<br>
+【2】SDE-Framework（2020-10-Yang Song）：Score-Based Generative Modeling through Stochastic Differential Equations<br>
+【3】DDIM（2020-10-Jiaming Song）：Denoising Diffusion Implicit Models<br>
+【4】IDDPM（2021-2-OpenAI）：Improved Denoising Diffusion Probabilistic Models<br>
+【5*】Diffusion-Beat-GANs（2021-5-OpenAI）：Diffusion Models Beat GANs on Image Synthesis<br> 
+【6】SR3（TPAMI-2022）)：Image-Super-Resolution-via-Iterative-Refinement<br> 
+【7】deblur（cvpr-2022）：Deblurring via Stochastic Refinement   
 
-
-[1-3 condition/guide relevant work]<br>  
-
+### 1-3 condition/guide relevant work
 From iterative denoising, explicit classifiers, to implicit classifiers (without classifier guidance). Implicit classifiers, without classifier guidance, are one of the direct foundations of typical works like GLIDE/Stable-Diffusion/Imagen, which also renders previous works based on explicit classifiers only of reference significance. The landmark achievement is the Stable Diffusion model in August 2022, with the core being latent diffusion (by then, Robin Rombach from CompVis had already joined Stability-AI). The discussion was very intense at the time because it was open-source.
 
 从迭代去噪，显式分类器，到隐式分类器（无分类器引导）。无分类器引导是典型工作GLIDE/Stable-Diffusion/Imagen的直接奠基之一，也使得之前基于显式分类器的工作只剩下借鉴意义。标志性的成果是2022年8月份的Stable Diffusion模型，核心是latent diffusion（这时候CompVis的Robin Rombach已经加入了Stability-AI）。因为是开源的，所以当时讨论非常热烈。
 
-## 2. Brief History
-### 2-1 diffusion model
+## 2. DDPM relevant
+### 2-1 DDPM
 **扩散模型**（diffusion model）主要有两个过程组成，前向扩散过程，反向去噪过程，前向扩散过程主要是将一张图片变成随机噪音（标准高斯分布），而逆向去噪过程则是将一张随机噪音的图片还原为一张完整的图片。
 
 **前向扩散**过程就是在原始图像上，随机添加高斯噪声。通过 T 步迭代，最终将原始图片的分布变成标准高斯分布。这个过程中没有需要学习的参数，高斯噪声的参数都是定义好的。
@@ -50,4 +48,10 @@ From iterative denoising, explicit classifiers, to implicit classifiers (without
 逆向扩散不同时间步使用同一个 U-net 模型，参数共享，类似于RNN结构。所以还需要给模型提供一个具有时间信息的输入——time embedding，类似于Transformer 里的positional embedding.
 
 ![image](https://github.com/SoliveTech/Recording/assets/56882057/8ef1e574-a8e9-46f0-9b3c-90893eee3efa)
+
+### 2-2 DDIM
+### 2-3 IDDPM
+### 2-4 相关应用
+
+## 3. SDE relevant
 
